@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText username, password, repassword;
 
-    Button signup, signin;
+    Button signup, login;
 
     DBHelper DB;
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         signup = findViewById(R.id.signup);
-        signin = findViewById(R.id.signin);
+        login = findViewById(R.id.login);
         repassword = findViewById(R.id.repassword);
         DB = new DBHelper(this);
 
@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     if (pass.equals(repass)) {
                         Boolean checkuser = DB.checkusername(user);
-                        if (checkuser == false) {
+                        if (checkuser==false) {
                             Boolean insert = DB.inserData(user, pass);
-                            if (insert == true) {
+                            if (insert==true) {
                                 Toast.makeText(MainActivity.this, "Registrasi Sukses", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                 startActivity(intent);
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        signin.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);

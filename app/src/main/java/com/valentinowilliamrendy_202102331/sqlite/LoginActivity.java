@@ -22,9 +22,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        username = findViewById(R.id.username1);
-        password = findViewById(R.id.password1);
-        signin = findViewById(R.id.login);
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
         signin = findViewById(R.id.login);
         DB = new DBHelper(this);
 
@@ -34,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
 
-                if (TextUtils.isEmpty(user) || TextUtils.isEmpty(pass))
+                if (TextUtils.isEmpty(user) || TextUtils.isEmpty(pass) || TextUtils.isEmpty(pass))
                     Toast.makeText(LoginActivity.this, "Harap Melengkapi Form Diatas", Toast.LENGTH_SHORT).show();
                 else {
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
