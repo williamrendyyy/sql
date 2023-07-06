@@ -1,9 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/pict"
     tools:context=".BukuActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Form Buku"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#FFFF"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kode Buku"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FFFF"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/edtkode"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Kode Buku"
+        android:textSize="18dp"
+        android:textColor="#FFFF"
+        android:textColorHint="#dde1e7"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Judul Buku"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FFFF"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/edtjudul"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Judul"
+        android:textSize="18dp"
+        android:textColor="#FFFF"
+        android:textColorHint="#dde1e7"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pengarang"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FFFF"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/edtpengarang"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Pengarang"
+        android:textSize="18dp"
+        android:textColor="#FFFF"
+        android:textColorHint="#dde1e7"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Penerbit"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FFFF"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/edtpenerbit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Penerbit"
+        android:textSize="18dp"
+        android:textColor="#FFFF"
+        android:textColorHint="#dde1e7"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ISBN"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FFFF"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/edtisbn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="ISBN"
+        android:textSize="18dp"
+        android:textColor="#FFFF"
+        android:textColorHint="#dde1e7"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnsimpan1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:text="TAMBAH"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="4dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btntampil1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TAMPIL"
+            android:padding="10dp"
+            android:background="@drawable/button"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="4dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnedit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EDIT"
+            android:padding="10dp"
+            android:background="@drawable/button"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="4dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnhapus1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HAPUS"
+            android:padding="10dp"
+            android:background="@drawable/button"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="4dp"
+            />
+    </LinearLayout>
+</LinearLayout>

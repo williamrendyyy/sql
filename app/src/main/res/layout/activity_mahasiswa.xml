@@ -1,9 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/pict"
     tools:context=".MahasiswaActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Form Biodata Mahasiswa"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#FFFF"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NIM Mahasiswa"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FFFF"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/edtnim"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="NIM"
+        android:textSize="18dp"
+        android:textColor="#FFFF"
+        android:textColorHint="#dde1e7"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nama Mahasiswa"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FFFF"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/edtnama"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Nama"
+        android:textSize="18dp"
+        android:textColor="#FFFF"
+        android:textColorHint="#dde1e7"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jenis Kelamin"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FFFF"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/edtjk"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Jenis Kelamin"
+        android:textSize="18dp"
+        android:textColor="#FFFF"
+        android:textColorHint="#dde1e7"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alamat"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FFFF"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/edtalamat"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Alamat"
+        android:textSize="18dp"
+        android:textColor="#FFFF"
+        android:textColorHint="#dde1e7"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FFFF"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/edtemail"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Email"
+        android:textSize="18dp"
+        android:textColor="#FFFF"
+        android:textColorHint="#dde1e7"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnsimpan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:text="TAMBAH"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="4dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btntampil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TAMPIL"
+            android:padding="10dp"
+            android:background="@drawable/button"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="4dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnedit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EDIT"
+            android:padding="10dp"
+            android:background="@drawable/button"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="4dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnhapus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HAPUS"
+            android:padding="10dp"
+            android:background="@drawable/button"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="4dp"
+            />
+    </LinearLayout>
+</LinearLayout>

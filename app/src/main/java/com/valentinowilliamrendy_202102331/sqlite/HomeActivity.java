@@ -36,7 +36,8 @@ public class HomeActivity extends AppCompatActivity {
         databuku.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getApplicationContext(), BukuActivity.class);
+                Intent intent = new Intent(getApplicationContext(), BukuActivity.class);
+                startActivity(intent);
             }
         });
 
