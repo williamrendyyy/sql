@@ -44,8 +44,8 @@ public class MahasiswaActivity extends AppCompatActivity {
                     if (TextUtils.isEmpty(n) || TextUtils.isEmpty(nm) || TextUtils.isEmpty(jk) || TextUtils.isEmpty(al) || TextUtils.isEmpty(em))
                         Toast.makeText(MahasiswaActivity.this, "Semua Field Wajib diIsi", Toast.LENGTH_LONG).show();
                     else {
-                        Boolean cekInputData= DB.inputDataMHS(n);
-                        if (cekInputData == false){
+                        Boolean ceknimMHS= DB.ceknim(n);
+                        if (ceknimMHS == false){
                             Boolean insert = DB.insertDataMHS(n,nm,jk,al,em);
                             if (insert == true){
                                 Toast.makeText(MahasiswaActivity.this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show();
@@ -108,7 +108,7 @@ public class MahasiswaActivity extends AppCompatActivity {
                         Toast.makeText(MahasiswaActivity.this, "Semua Field Wajib diIsi", Toast.LENGTH_LONG).show();
                     else {
                         Boolean edit = DB.editDataMHS(n_,nm_,jk_,al_,em_);
-                        if (edit == true){
+                        if (edit == false){
                             Toast.makeText(MahasiswaActivity.this, "Data berhasil diedit", Toast.LENGTH_SHORT).show();
                         }else {
                             Toast.makeText(MahasiswaActivity.this,"Data gagal diedit", Toast.LENGTH_SHORT).show();

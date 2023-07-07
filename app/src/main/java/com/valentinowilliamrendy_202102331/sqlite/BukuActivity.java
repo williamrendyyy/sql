@@ -44,9 +44,9 @@ public class BukuActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(kd) || TextUtils.isEmpty(jd) || TextUtils.isEmpty(peng) || TextUtils.isEmpty(pen) || TextUtils.isEmpty(isb))
                     Toast.makeText(BukuActivity.this, "Semua Field Wajib diIsi", Toast.LENGTH_LONG).show();
                 else {
-                    Boolean cekInputData= DB.inputDataBOOK(kd);
-                    if (cekInputData == false){
-                        Boolean insert = DB.insertDataMHS(kd,jd,peng,pen,isb);
+                    Boolean cekDataBOOK= DB.cekDataBOOK(kd);
+                    if (cekDataBOOK == false){
+                        Boolean insert = DB.insertDataBOOK(kd,jd,peng,pen,isb);
                         if (insert == true){
                             Toast.makeText(BukuActivity.this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show();
                         }else {
@@ -107,8 +107,8 @@ public class BukuActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(kd_) || TextUtils.isEmpty(jd_) || TextUtils.isEmpty(peng_) || TextUtils.isEmpty(pen_) || TextUtils.isEmpty(isb_))
                     Toast.makeText(BukuActivity.this, "Semua Field Wajib diIsi", Toast.LENGTH_LONG).show();
                 else {
-                    Boolean edit = DB.editDataMHS(kd_,jd_,peng_,pen_,isb_);
-                    if (edit == true){
+                    Boolean edit = DB.editDataBOOK(kd_,jd_,peng_,pen_,isb_);
+                    if (edit == false){
                         Toast.makeText(BukuActivity.this, "Data berhasil diedit", Toast.LENGTH_SHORT).show();
                     }else {
                         Toast.makeText(BukuActivity.this,"Data gagal diedit", Toast.LENGTH_SHORT).show();

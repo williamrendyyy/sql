@@ -15,12 +15,14 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("create table users(username TEXT primary key, password TEXT)");
         sqLiteDatabase.execSQL("create table bukus(kode TEXT primary key, judul TEXT, pengarang TEXT, penerbit TEXT, isbn TEXT)");
-        sqLiteDatabase.execSQL("create table biodatas(nim TEXT primary key, nama TEXT, jk TEXT, alamat TEXT, email TEXT)");
+        sqLiteDatabase.execSQL("create table biodatas(nim TEXT primary key, nama TEXT, jeniskelamin TEXT, alamat TEXT, email TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("drop table if exists users");
+        sqLiteDatabase.execSQL("drop table if exists bukus");
+        sqLiteDatabase.execSQL("drop table if exists biodatas");
     }
 
     public Boolean inserData(String username, String password){
@@ -65,7 +67,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("alamat", alamat);
         values.put("email", email);
         long result = db.insert("biodatas", null,values);
-        if (result == -1) return false;
+        if (result ==1) return false;
         else
             return true;
     }
@@ -102,7 +104,7 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("Select * from biodatas where nim=?", new String[]{nim});
         if (cursor.getCount()>0) {
             long result = db.update("biodatas", values, "nim=?", new String[]{nim});
-            if (result == -1) {
+            if (result == 1) {
                 return false;
             } else {
                 return true;
@@ -113,7 +115,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean inputDataMHS(String nim){
+    public Boolean ceknim(String nim){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("Select * from biodatas where nim=?", new String[] {nim});
         if (cursor.getCount()>0)
@@ -132,7 +134,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("penerbit", penerbit);
         values.put("isbn", isbn);
         long result = db.insert("bukus", null,values);
-        if (result == -1) return false;
+        if (result == 0) return false;
         else
             return true;
     }
@@ -165,10 +167,10 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("pengarang", pengarang);
         values.put("penerbit", penerbit);
         values.put("isbn", isbn);
-        Cursor cursor = db.rawQuery("Select * from bukuss where kode=?", new String[]{kode});
+        Cursor cursor = db.rawQuery("Select * from bukus where kode=?", new String[]{kode});
         if (cursor.getCount()>0) {
-            long result = db.update("biodatas", values, "nim=?", new String[]{kode});
-            if (result == -1) {
+            long result = db.update("bukus", values, "kode=?", new String[]{kode});
+            if (result == 1) {
                 return false;
             } else {
                 return true;
@@ -179,9 +181,9 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean inputDataBOOK(String kode){
+    public Boolean cekDataBOOK(String kode){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("Select * from bukuss where kode=?", new String[] {kode});
+        Cursor cursor = db.rawQuery("Select * from bukus where kode=?", new String[] {kode});
         if (cursor.getCount()>0)
             return true;
         else
